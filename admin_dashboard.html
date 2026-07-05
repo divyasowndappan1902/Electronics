@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Electronic Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <a href="index.html" class="sidebar-logo" style="display:block; text-decoration:none;"><img src="logo.webp" alt="STACKLY Logo" class="logo-img"></a>
+      <nav class="sidebar-nav">
+        <a href="admin_dashboard.html" class="active">📊 Dashboard</a>
+        <a href="admin-orders.html">📦 Orders</a>
+        <a href="admin-products.html">🏷️ Products</a>
+        <a href="admin-customers.html">👥 Customers</a>
+        <a href="admin-analytics.html">📈 Analytics</a>
+        <a href="admin-settings.html">⚙️ Settings</a>
+      </nav>
+      <div style="padding: 2rem; border-top: 1px solid #eaeaea;">
+        <a href="login.html" style="color: var(--text-light); display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">🚪 Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="mobile-sidebar-toggle" style="display: none;">☰</div>
+        <div class="topbar-search">
+          <input type="text" placeholder="Search orders, customers, or products...">
+        </div>
+        <div class="topbar-profile">
+          <div style="font-size: 1.5rem; cursor: pointer;" onclick="window.location.href='404.html'">🔔 <span style="font-size: 0.8rem; background: var(--primary-color); color: white; border-radius: 50%; padding: 2px 6px; position: relative; top: -10px; left: -10px;">12</span></div>
+          <!-- Unique Role Indicator -->
+          <span id="userEmailDisplay" style="margin-right: 15px; font-weight: 500; color: var(--text-dark);"></span>
+          <div class="role-badge badge-admin">Admin</div>
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Admin" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; cursor: pointer;">
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        <div style="margin-bottom: 2rem;">
+          <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Dashboard Overview</h2>
+          <p style="color: var(--text-light);">Here's what's happening with your store today.</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div style="color: var(--text-light); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Total Sales (Today)</div>
+            <div class="stat-value">$1,245.89</div>
+          </div>
+          <div class="stat-card">
+            <div style="color: var(--text-light); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Active Orders</div>
+            <div class="stat-value">34</div>
+          </div>
+          <div class="stat-card">
+            <div style="color: var(--text-light); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">New Customers</div>
+            <div class="stat-value" style="color: #4CAF50;">+12</div>
+          </div>
+        </div>
+
+        <div class="dashboard-table-container">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <h3 style="font-size: 1.25rem;">Recent Transactions</h3>
+            <a href="404.html" style="color: var(--primary-color); font-weight: 600; font-size: 0.9rem;">View All</a>
+          </div>
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 600;">#ORD-9934</td>
+                <td>Alex Johnson</td>
+                <td>Oct 24, 2026</td>
+                <td style="font-weight: 600;">$129.98</td>
+                <td><span class="status-pill status-completed">Completed</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">#ORD-9935</td>
+                <td>Sarah Smith</td>
+                <td>Oct 24, 2026</td>
+                <td style="font-weight: 600;">$499.00</td>
+                <td><span class="status-pill status-pending">Processing</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">#ORD-9936</td>
+                <td>Mike Davis</td>
+                <td>Oct 24, 2026</td>
+                <td style="font-weight: 600;">$499.00</td>
+                <td><span class="status-pill status-pending">Processing</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const email = localStorage.getItem('userEmail') || 'user@example.com';
+      const emailDisplay = document.getElementById('userEmailDisplay');
+      if (emailDisplay) {
+        emailDisplay.textContent = email;
+      }
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Main Navbar Toggle
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+      });
+    }
+
+    // Dashboard Sidebar Toggle
+    const sidebarToggle = document.querySelector('.mobile-sidebar-toggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    if (sidebarToggle && sidebar) {
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
+    }
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account - Electronic Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <a href="index.html" class="sidebar-logo" style="display:block; text-decoration:none;"><img src="logo.webp" alt="STACKLY Logo" class="logo-img"></a>
+      <nav class="sidebar-nav">
+        <a href="customer_dashboard.html">👤 My Account</a>
+        <a href="order-history.html">📦 Order History</a>
+        <a href="wishlist.html">❤️ Wishlist</a>
+        <a href="saved-addresses.html">📍 Saved Addresses</a>
+        <a href="payment-methods.html">💳 Payment Methods</a>
+        <a href="account-settings.html">⚙️ Account Settings</a>
+      </nav>
+      <div style="padding: 2rem; border-top: 1px solid #eaeaea;">
+        <a href="login.html" style="color: var(--text-light); display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">🚪 Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="mobile-sidebar-toggle" style="display: none;">☰</div>
+        <div class="topbar-search">
+          <input type="text" placeholder="Search your orders...">
+        </div>
+        <div class="topbar-profile">
+          <div style="font-size: 1.5rem; cursor: pointer;">🔔 <span style="font-size: 0.8rem; background: var(--primary-color); color: white; border-radius: 50%; padding: 2px 6px; position: relative; top: -10px; left: -10px;">3</span></div>
+          <div style="font-size: 1.5rem; cursor: pointer;" onclick="window.location.href='404.html'">💬</div>
+          <!-- Unique Role Indicator -->
+          <span id="userEmailDisplay" style="margin-right: 15px; font-weight: 500; color: var(--text-dark);"></span>
+          <div class="role-badge badge-customer">Customer</div>
+          <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80" alt="Customer" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; cursor: pointer;">
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Payment Methods</h2>
+            <p style="color: var(--text-light);">Manage your credit cards and billing information.</p>
+          </div>
+          <button class="btn" onclick="window.location.href='404.html'">+ Add Payment Method</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem;">
+          <!-- Card 1 -->
+          <div style="background: linear-gradient(135deg, #1e1e1e 0%, #3a3a3a 100%); border-radius: 16px; padding: 2rem; color: white; box-shadow: 0 15px 35px rgba(0,0,0,0.2); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; font-style: italic; font-weight: 900;">VISA</div>
+            <div style="font-size: 1.5rem; letter-spacing: 2px; margin-top: 2rem; margin-bottom: 1.5rem; font-family: monospace;">**** **** **** 4242</div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+              <div>
+                <div style="font-size: 0.75rem; text-transform: uppercase; color: #aaa; margin-bottom: 0.25rem;">Card Holder</div>
+                <div style="font-weight: 600;">ALEX JOHNSON</div>
+              </div>
+              <div>
+                <div style="font-size: 0.75rem; text-transform: uppercase; color: #aaa; margin-bottom: 0.25rem;">Expires</div>
+                <div style="font-weight: 600;">12/28</div>
+              </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+              <span style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">DEFAULT</span>
+              <div style="display: flex; gap: 1rem;">
+                <a href="404.html" style="color: white; font-size: 0.9rem;">Edit</a>
+                <a href="404.html" style="color: #ff5252; font-size: 0.9rem;">Remove</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div style="background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%); border-radius: 16px; padding: 2rem; color: white; box-shadow: 0 15px 35px rgba(13,71,161,0.2); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 1.5rem; right: 1.5rem; display: flex; gap: -10px;">
+              <div style="width: 30px; height: 30px; border-radius: 50%; background: #eb001b; opacity: 0.8;"></div>
+              <div style="width: 30px; height: 30px; border-radius: 50%; background: #f79e1b; opacity: 0.8; margin-left: -15px;"></div>
+            </div>
+            <div style="font-size: 1.5rem; letter-spacing: 2px; margin-top: 2rem; margin-bottom: 1.5rem; font-family: monospace;">**** **** **** 8891</div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+              <div>
+                <div style="font-size: 0.75rem; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 0.25rem;">Card Holder</div>
+                <div style="font-weight: 600;">ALEX JOHNSON</div>
+              </div>
+              <div>
+                <div style="font-size: 0.75rem; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 0.25rem;">Expires</div>
+                <div style="font-weight: 600;">09/27</div>
+              </div>
+            </div>
+            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: flex-end; align-items: center;">
+              <div style="display: flex; gap: 1rem;">
+                <a href="404.html" style="color: white; font-size: 0.9rem;">Set Default</a>
+                <a href="404.html" style="color: white; font-size: 0.9rem;">Edit</a>
+                <a href="404.html" style="color: #ff5252; font-size: 0.9rem;">Remove</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const email = localStorage.getItem('userEmail') || 'user@example.com';
+      const emailDisplay = document.getElementById('userEmailDisplay');
+      if (emailDisplay) {
+        emailDisplay.textContent = email;
+      }
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Main Navbar Toggle
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+      });
+    }
+
+    // Dashboard Sidebar Toggle
+    const sidebarToggle = document.querySelector('.mobile-sidebar-toggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    if (sidebarToggle && sidebar) {
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
+    }
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

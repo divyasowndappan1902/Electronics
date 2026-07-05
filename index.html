@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronic Store - Ultimate Mega Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo"><img src="logo.webp" alt="STACKLY Logo" class="logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="collection.html">Collection</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+        <div class="nav-icons">
+      <div class="mobile-menu-btn">☰</div>
+    </div>
+  </nav>
+
+  <!-- 1. Hero Banner -->
+  <header class="hero container" style="background: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=1600&q=80') center/cover; padding: 10rem 2rem; border-radius: 24px; margin-top: 2rem; color: white; text-align: left; display: flex; align-items: center; position: relative;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.2)); border-radius: 24px;"></div>
+    <div style="position: relative; z-index: 2; max-width: 600px; padding-left: 3rem;">
+      <span style="background: var(--primary-color); color: white; padding: 5px 15px; border-radius: 20px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Mega Sale</span>
+      <h1 style="font-size: 4.5rem; line-height: 1.1; margin: 1.5rem 0; color: white;">The Future of Tech is Here.</h1>
+      <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 2.5rem;">Up to 50% Off on Premium Laptops, Smartphones, and Smart Home Devices. Limited time offer!</p>
+      <a href="404.html" class="btn" style="font-size: 1.2rem; padding: 15px 40px;">Shop Now 🛍️</a>
+    </div>
+  </header>
+
+  <!-- 2. Featured Categories -->
+  <section class="container section-padding">
+    <h2 class="section-title">Featured Categories</h2>
+    <div style="display: flex; gap: 1.5rem; overflow-x: auto; padding-bottom: 1rem;">
+      <a href="shop.html" class="btn btn-outline" style="white-space: nowrap; border-radius: 30px;">📱 Smartphones</a>
+      <a href="shop.html" class="btn btn-outline" style="white-space: nowrap; border-radius: 30px;">💻 Laptops</a>
+      <a href="shop.html" class="btn btn-outline" style="white-space: nowrap; border-radius: 30px;">⌚ Smart Watches</a>
+      <a href="shop.html" class="btn btn-outline" style="white-space: nowrap; border-radius: 30px;">🎧 Earbuds & Headphones</a>
+      <a href="shop.html" class="btn btn-outline" style="white-space: nowrap; border-radius: 30px;">📺 TVs</a>
+      <a href="shop.html" class="btn btn-outline" style="white-space: nowrap; border-radius: 30px;">🏠 Home Appliances</a>
+      <a href="shop.html" class="btn btn-outline" style="white-space: nowrap; border-radius: 30px;">🎮 Gaming Accessories</a>
+      <a href="shop.html" class="btn btn-outline" style="white-space: nowrap; border-radius: 30px;">⌨️ Computer Accessories</a>
+    </div>
+  </section>
+
+  <!-- 3. Featured Products -->
+  <section class="container section-padding" style="padding-top: 0;">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="product-grid">
+      <!-- Dummy Products -->
+      <div class="product-card"><div class="product-img-wrapper"><img src="studio-speaker.webp" alt="Studio Speaker"></div><div class="product-info"><h3 class="product-title">Studio Speaker</h3><div class="product-price">$299</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=500&q=80" alt="Camera"></div><div class="product-info"><h3 class="product-title">Pro Camera</h3><div class="product-price">$1,299</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?w=500&q=80" alt="Phone"></div><div class="product-info"><h3 class="product-title">X Phone</h3><div class="product-price">$999</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&q=80" alt="Watch"></div><div class="product-info"><h3 class="product-title">Smart Watch</h3><div class="product-price">$399</div></div></div>
+    </div>
+  </section>
+
+  <!-- 4. New Arrivals -->
+  <section class="container section-padding" style="background: var(--bg-secondary); border-radius: 24px; margin-bottom: 5rem;">
+    <h2 class="section-title">New Arrivals</h2>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80" alt="Laptop"></div><div class="product-info"><h3 class="product-title">Ultrabook 15</h3><div class="product-price">$1,499</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=500&q=80" alt="Console"></div><div class="product-info"><h3 class="product-title">NextGen Console</h3><div class="product-price">$499</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80" alt="Keyboard"></div><div class="product-info"><h3 class="product-title">Mechanical Board</h3><div class="product-price">$149</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="Headphones"></div><div class="product-info"><h3 class="product-title">Noise Cancelling</h3><div class="product-price">$349</div></div></div>
+    </div>
+  </section>
+
+  <!-- 5. Best Sellers -->
+  <section class="container section-padding" style="padding-top: 0;">
+    <h2 class="section-title">Best Sellers</h2>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80" alt="Watch"></div><div class="product-info"><h3 class="product-title">Fitness Band</h3><div class="product-price">$99</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1523206489230-c012c64b2b48?w=500&q=80" alt="Phone"></div><div class="product-info"><h3 class="product-title">Smartphone Lite</h3><div class="product-price">$599</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="mini-speaker.webp" alt="Mini Speaker"></div><div class="product-info"><h3 class="product-title">Mini Speaker</h3><div class="product-price">$49</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=500&q=80" alt="Controller"></div><div class="product-info"><h3 class="product-title">Pro Controller</h3><div class="product-price">$69</div></div></div>
+    </div>
+  </section>
+
+  <!-- 6. Today's Deals / Flash Sale -->
+  <section class="container" style="margin-bottom: 5rem;">
+    <div class="flash-sale-banner">
+      <div>
+        <span class="hero-label" style="color: var(--primary-color);">Flash Sale</span>
+        <h2 style="font-size: 3rem; margin-bottom: 0.5rem; color: white;">Today's Deals!</h2>
+        <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem;">Hurry up! Offers end in:</p>
+        <div class="timer-box">
+          <div class="timer-item"><div class="timer-value">12</div><div class="timer-label">Hours</div></div>
+          <div class="timer-item"><div class="timer-value">45</div><div class="timer-label">Mins</div></div>
+          <div class="timer-item"><div class="timer-value">30</div><div class="timer-label">Secs</div></div>
+        </div>
+      </div>
+      <div style="background: white; padding: 2rem; border-radius: 16px; text-align: center; color: var(--text-dark);">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80" alt="Headphones" style="width: 200px; border-radius: 8px; margin-bottom: 1rem;">
+        <h3 style="margin-bottom: 0.5rem;">Premium Headphones</h3>
+        <div style="color: var(--primary-color); font-weight: 800; font-size: 1.5rem;">$199.00 <span style="text-decoration: line-through; color: var(--text-light); font-size: 1rem; font-weight: 400;">$349.00</span></div>
+        <button class="btn" style="margin-top: 1rem; width: 100%;" onclick="window.location.href='404.html'">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Top Brands -->
+  <section class="container section-padding" style="padding-top: 0;">
+    <h2 class="section-title">Top Brands</h2>
+    <div class="brands-marquee">
+      <h3>APPLE</h3>
+      <h3>SAMSUNG</h3>
+      <h3>SONY</h3>
+      <h3>HP</h3>
+      <h3>DELL</h3>
+      <h3>LENOVO</h3>
+      <h3>LG</h3>
+      <h3>XIAOMI</h3>
+    </div>
+  </section>
+
+  <!-- 8. Popular Products -->
+  <section class="container section-padding" style="padding-top: 0;">
+    <h2 class="section-title">Popular Products</h2>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=500&q=80" alt="Camera"></div><div class="product-info"><h3 class="product-title">Vlog Camera</h3><div class="product-price">$899</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&q=80" alt="Laptop"></div><div class="product-info"><h3 class="product-title">Creator Laptop</h3><div class="product-price">$1,999</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=500&q=80" alt="Monitor"></div><div class="product-info"><h3 class="product-title">Curved Monitor</h3><div class="product-price">$599</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&q=80" alt="Watch"></div><div class="product-info"><h3 class="product-title">Sport Watch</h3><div class="product-price">$249</div></div></div>
+    </div>
+  </section>
+
+  <!-- 9. Trending Gadgets -->
+  <section class="container section-padding" style="background: var(--bg-secondary); border-radius: 24px; margin-bottom: 5rem;">
+    <h2 class="section-title">Trending Gadgets</h2>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80" alt="Keyboard"></div><div class="product-info"><h3 class="product-title">RGB Keyboard</h3><div class="product-price">$129</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=500&q=80" alt="Console"></div><div class="product-info"><h3 class="product-title">VR Headset</h3><div class="product-price">$399</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="smart-assistant.webp" alt="Smart Assistant"></div><div class="product-info"><h3 class="product-title">Smart Assistant</h3><div class="product-price">$89</div></div></div>
+      <div class="product-card"><div class="product-img-wrapper"><img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80" alt="Watch"></div><div class="product-info"><h3 class="product-title">Health Tracker</h3><div class="product-price">$149</div></div></div>
+    </div>
+  </section>
+
+  <!-- 10. Special Offers & Discounts -->
+  <section class="container" style="margin-bottom: 5rem;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+      <div style="background: var(--primary-color); color: white; padding: 4rem; border-radius: 16px; text-align: center;">
+        <h2 style="color: white; font-size: 2.5rem;">Up to 50% Off</h2>
+        <p style="opacity: 0.9;">On selected audio equipment.</p>
+        <button class="btn" style="background: white; color: var(--primary-color);" onclick="window.location.href='404.html'">Shop Audio</button>
+      </div>
+      <div style="background: var(--bg-dark); color: white; padding: 4rem; border-radius: 16px; text-align: center;">
+        <h2 style="color: white; font-size: 2.5rem;">Student Discount</h2>
+        <p style="opacity: 0.9;">Get 15% off all laptops with student ID.</p>
+        <button class="btn" style="background: white; color: var(--bg-dark);" onclick="window.location.href='404.html'">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Why Choose Us? -->
+  <section class="container section-padding" style="padding-top: 0;">
+    <h2 class="section-title">Why Choose Us?</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+      <div><div style="font-size: 3rem; margin-bottom: 1rem;">✔️</div><h3 style="font-size: 1.2rem;">Genuine Products</h3></div>
+      <div><div style="font-size: 3rem; margin-bottom: 1rem;">🚚</div><h3 style="font-size: 1.2rem;">Fast Delivery</h3></div>
+      <div><div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div><h3 style="font-size: 1.2rem;">Secure Payments</h3></div>
+      <div><div style="font-size: 3rem; margin-bottom: 1rem;">🔄</div><h3 style="font-size: 1.2rem;">Easy Returns</h3></div>
+      <div><div style="font-size: 3rem; margin-bottom: 1rem;">🛡️</div><h3 style="font-size: 1.2rem;">Warranty Support</h3></div>
+    </div>
+  </section>
+
+  <!-- 12. Customer Reviews & Ratings -->
+  <section class="container section-padding" style="background: var(--bg-secondary); border-radius: 24px; margin-bottom: 5rem;">
+    <h2 class="section-title">Customer Reviews & Ratings</h2>
+    <div class="testimonials">
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"Incredible layout and super easy to navigate. Bought my new camera here and the process was flawless!"</p>
+        <div class="reviewer">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80" alt="User" class="reviewer-img">
+          <div class="reviewer-info"><h4>Sarah Jenkins</h4><p style="font-size: 0.85rem; margin:0;">Verified Buyer</p></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p>"The best electronics store online. The UI is clean, modern, and very user friendly. Highly recommend."</p>
+        <div class="reviewer">
+          <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=150&q=80" alt="User" class="reviewer-img">
+          <div class="reviewer-info"><h4>Michael Chen</h4><p style="font-size: 0.85rem; margin:0;">Tech Enthusiast</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Our Services -->
+  <section class="container section-padding" style="padding-top: 0;">
+    <h2 class="section-title">Our Services</h2>
+    <div class="features">
+      <div class="feature-box">
+        <div class="feature-icon">🛠️</div>
+        <h3>Installation Support</h3>
+        <p>Expert setup at home</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Latest Tech News / Blog -->
+  <section class="container section-padding" style="padding-top: 0;">
+    <h2 class="section-title">Latest Tech News</h2>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80" alt="Blog 1" class="blog-img">
+        <div class="blog-content">
+          <span class="blog-date">July 3, 2026</span>
+          <h3>The Best Laptops for Creators in 2026</h3>
+          <p>Discover which laptops provide the best performance for video editing and 3D modeling...</p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80" alt="Blog 2" class="blog-img">
+        <div class="blog-content">
+          <span class="blog-date">June 28, 2026</span>
+          <h3>Active Noise Cancellation Explained</h3>
+          <p>How does ANC actually work? We break down the technology behind the silence...</p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&q=80" alt="Blog 3" class="blog-img">
+        <div class="blog-content">
+          <span class="blog-date">June 15, 2026</span>
+          <h3>Smart Home Setup Guide</h3>
+          <p>Start automating your home with these 5 essential smart devices for beginners...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. Newsletter Subscription -->
+  <section class="container">
+    <div class="newsletter" style="margin-top: 0;">
+      <h2>Newsletter Subscription</h2>
+      <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); const email = this.querySelector('input[type=\'email\']').value; if(email) localStorage.setItem('userEmail', email); window.location.href='404.html';">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 16. Frequently Asked Questions (FAQ) -->
+  <section class="container section-padding">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Do you offer warranty on all products? <span>+</span></div>
+        <div class="faq-answer">Yes, all our products come with at least a 1-year manufacturer warranty. Specific warranty details are listed on the product pages.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How fast is the Free Shipping? <span>+</span></div>
+        <div class="faq-answer">Our free shipping generally takes 3-5 business days. Expedited shipping is available at checkout for an additional fee.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I return a product if I don't like it? <span>+</span></div>
+        <div class="faq-answer">Absolutely. We offer a hassle-free 30-day return policy for unopened items in their original packaging.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 17. Contact & Store Information (Footer) -->
+    <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="logo"><img src="logo.webp" alt="STACKLY Logo" class="logo-img"></a>
+          <p class="footer-desc">Premium electronics, unbeatable prices, and next-gen tech delivered right to your door.</p>
+          <div class="social-links">
+            <a href="404.html" class="social-icon"><span class="material-icons" style="font-size: 1.2rem;">camera_alt</span></a>
+            <a href="404.html" class="social-icon"><span class="material-icons" style="font-size: 1.2rem;">facebook</span></a>
+            <a href="404.html" class="social-icon"><span class="material-icons" style="font-size: 1.2rem;">smart_display</span></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="collection.html">Collections</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Categories</h3>
+          <ul class="footer-links">
+            <li><a href="404.html">Laptops & PC</a></li>
+            <li><a href="404.html">Smartphones</a></li>
+            <li><a href="404.html">Audio & Sound</a></li>
+            <li><a href="404.html">Gaming Gear</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h3>Contact Us</h3>
+          <ul class="footer-links">
+            <li><span class="material-icons" style="color: #ef4444; margin-right: 8px;">location_on</span> Stackly Phase1, Salem, Tamil Nadu</li>
+            <li><span class="material-icons" style="color: #ef4444; margin-right: 8px;">phone</span> +91 9876543210</li>
+            <li><span class="material-icons" style="color: #ef4444; margin-right: 8px;">email</span> support@thestackly.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly. All rights reserved.</p>
+        <div class="payment-methods">
+          <div class="chips">Visa</div>
+          <div class="chips">Mastercard</div>
+          <div class="chips">PayPal</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Main Navbar Toggle
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+      });
+    }
+
+    // Dashboard Sidebar Toggle
+    const sidebarToggle = document.querySelector('.mobile-sidebar-toggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    if (sidebarToggle && sidebar) {
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
+    }
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

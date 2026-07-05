@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account - Electronic Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <a href="index.html" class="sidebar-logo" style="display:block; text-decoration:none;"><img src="logo.webp" alt="STACKLY Logo" class="logo-img"></a>
+      <nav class="sidebar-nav">
+        <a href="customer_dashboard.html">👤 My Account</a>
+        <a href="order-history.html">📦 Order History</a>
+        <a href="wishlist.html">❤️ Wishlist</a>
+        <a href="saved-addresses.html">📍 Saved Addresses</a>
+        <a href="payment-methods.html">💳 Payment Methods</a>
+        <a href="account-settings.html">⚙️ Account Settings</a>
+      </nav>
+      <div style="padding: 2rem; border-top: 1px solid #eaeaea;">
+        <a href="login.html" style="color: var(--text-light); display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">🚪 Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="mobile-sidebar-toggle" style="display: none;">☰</div>
+        <div class="topbar-search">
+          <input type="text" placeholder="Search your orders...">
+        </div>
+        <div class="topbar-profile">
+          <div style="font-size: 1.5rem; cursor: pointer;" onclick="window.location.href='404.html'">🔔 <span style="font-size: 0.8rem; background: var(--primary-color); color: white; border-radius: 50%; padding: 2px 6px; position: relative; top: -10px; left: -10px;">3</span></div>
+          <div style="font-size: 1.5rem; cursor: pointer;" onclick="window.location.href='404.html'">💬</div>
+          <!-- Unique Role Indicator -->
+          <span id="userEmailDisplay" style="margin-right: 15px; font-weight: 500; color: var(--text-dark);"></span>
+          <div class="role-badge badge-customer">Customer</div>
+          <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&q=80" alt="Customer" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; cursor: pointer;">
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Saved Addresses</h2>
+            <p style="color: var(--text-light);">Manage your shipping and billing addresses.</p>
+          </div>
+          <button class="btn">+ Add New Address</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+          <!-- Address 1 -->
+          <div style="background: white; border-radius: 16px; padding: 2rem; border: 2px solid var(--primary-color); box-shadow: 0 10px 30px rgba(244,44,84,0.1); position: relative;">
+            <div style="position: absolute; top: 1.5rem; right: 1.5rem; background: var(--primary-color); color: white; font-size: 0.75rem; padding: 4px 8px; border-radius: 4px; font-weight: 700;">DEFAULT</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">🏠 Home</h3>
+            <p style="color: var(--text-dark); margin-bottom: 0.25rem; font-weight: 600;">Alex Johnson</p>
+            <p style="color: var(--text-light); margin-bottom: 0.25rem;">1234 Tech Avenue, Apt 4B</p>
+            <p style="color: var(--text-light); margin-bottom: 0.25rem;">San Francisco, CA 94107</p>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">United States</p>
+            <p style="color: var(--text-dark); margin-bottom: 1.5rem;">📞 (555) 123-4567</p>
+            <div style="display: flex; gap: 1rem;">
+              <a href="404.html" style="color: var(--primary-color); font-weight: 600;">Edit</a>
+              <a href="404.html" style="color: #999; font-weight: 600;">Remove</a>
+            </div>
+          </div>
+
+          <!-- Address 2 -->
+          <div style="background: white; border-radius: 16px; padding: 2rem; border: 1px solid #eaeaea; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <h3 style="font-size: 1.25rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">🏢 Office</h3>
+            <p style="color: var(--text-dark); margin-bottom: 0.25rem; font-weight: 600;">Alex Johnson</p>
+            <p style="color: var(--text-light); margin-bottom: 0.25rem;">987 Corporate Blvd, Floor 12</p>
+            <p style="color: var(--text-light); margin-bottom: 0.25rem;">San Francisco, CA 94105</p>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem;">United States</p>
+            <p style="color: var(--text-dark); margin-bottom: 1.5rem;">📞 (555) 987-6543</p>
+            <div style="display: flex; gap: 1rem;">
+              <a href="404.html" style="color: var(--primary-color); font-weight: 600;">Edit</a>
+              <a href="404.html" style="color: #999; font-weight: 600;">Remove</a>
+              <a href="404.html" style="color: var(--text-light); font-weight: 600; margin-left: auto;">Set Default</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const email = localStorage.getItem('userEmail') || 'user@example.com';
+      const emailDisplay = document.getElementById('userEmailDisplay');
+      if (emailDisplay) {
+        emailDisplay.textContent = email;
+      }
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Main Navbar Toggle
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+      });
+    }
+
+    // Dashboard Sidebar Toggle
+    const sidebarToggle = document.querySelector('.mobile-sidebar-toggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    if (sidebarToggle && sidebar) {
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
+    }
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

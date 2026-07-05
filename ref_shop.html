@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop || Ecommerce</title>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="shared.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <main class="main-container">
+        <header id="header">
+            <div class="header-cls reveal-section">
+                <a href="index.html" class="head-logo">
+                    <img src="./assets/Stackly-Logo-White.webp" alt="Logo" class="logo reveal-image1">
+                </a>
+                <nav class="nav-items" id="navMenu">
+                    <a href="index.html" class=" btn-sweep">Home</a>
+                    <a href="shop.html" class="nav-active btn-sweep">Shop</a>
+                    <a href="collections.html" class="btn-sweep">Collections</a>
+                    <a href="contact.html" class="btn-sweep">Contact</a>
+                    <div class="close-btn material-icons" id="closeMenu">close</div>
+                    <div class="mob-view">
+                        <a href="login.html" class="btn-cart">Login <span class="material-icons">login</span></a>
+                    </div>
+                </nav>
+                <div class="header-actions">
+                    <a href="login.html" class="btn-cart">Login <span class="material-icons">login</span></a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="material-icons">menu</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <section class="shop-hero container">
+                <div class="shop-hero-content">
+
+                    <nav aria-label="Breadcrumb" class="breadcrumbs">
+                        <ol>
+                            <li><a href="index.html"><span class="material-icons">home</span> Home</a></li>
+                            <li class="separator"><span class="material-icons">chevron_right</span></li>
+                            <li><span class="material-icons active">storefront</span> Shop</li>
+                        </ol>
+                    </nav>
+
+                    <h1 class="shop-title">Shop our <span class="text-gradient">Products</span></h1>
+
+                </div>
+            </section>
+            <section class="shop-controls">
+                <h1 class="shop-title" id="shopTitle">Gaming Gear <span class="result-count" id="resultCount">(24
+                        Results)</span></h1>
+                <div class="sort-wrapper">
+                    <label for="sortSelect" class="sort-label">Sort by:</label>
+                    <select id="sortSelect">
+                        <option value="price-asc">Price (Low to High)</option>
+                        <option value="price-desc">Price (High to Low)</option>
+                        <option value="newest">Newest</option>
+                        <option value="rating">Top Rated</option>
+                    </select>
+                </div>
+            </section>
+
+            <div class="filter-chips" id="filterChips">
+            </div>
+
+            <div class="shop-container reveal-section">
+                <aside class="filter-sidebar glass-panel" id="filterSidebar">
+                    <h3 class="sidebar-title">Filters <button class="clear-all-btn btn-chip" id="clearAllBtn">Clear
+                            All</button></h3>
+                    <div class="filter-section">
+                        <h4>Categories <span class="toggle-icon material-icons"
+                                data-target="categories">expand_more</span></h4>
+                        <ul id="categories">
+                            <li><label><input type="checkbox" value="phones" data-type="category"> Phones</label></li>
+                            <li><label><input type="checkbox" value="laptops" data-type="category"> Laptops</label></li>
+                            <li><label><input type="checkbox" value="audio" data-type="category"> Audio</label></li>
+                            <li><label><input type="checkbox" value="gaming" data-type="category"> Gaming</label></li>
+                            <li><label><input type="checkbox" value="wearables" data-type="category"> Wearables</label>
+                            </li>
+                            <li><label><input type="checkbox" value="drones" data-type="category"> Drones</label></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Price Range</h4>
+                        <div class="price-inputs">
+                            <input type="number" id="minPrice" placeholder="Min ($0)" min="0" max="5000">
+                            <span>-</span>
+                            <input type="number" id="maxPrice" placeholder="Max ($5000)" min="0" max="5000">
+                            <button class="apply-price-btn btn btn-chip" id="applyPriceBtn">Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Brands <span class="toggle-icon material-icons" data-target="brands">expand_more</span></h4>
+                        <ul id="brands">
+                            <li><label><input type="checkbox" value="Apple" data-type="brand"> Apple</label></li>
+                            <li><label><input type="checkbox" value="Samsung" data-type="brand"> Samsung</label></li>
+                            <li><label><input type="checkbox" value="Razer" data-type="brand"> Razer</label></li>
+                            <li><label><input type="checkbox" value="Sony" data-type="brand"> Sony</label></li>
+                            <li><label><input type="checkbox" value="HP" data-type="brand"> HP</label></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4>Specs <span class="toggle-icon material-icons" data-target="specs">expand_more</span></h4>
+                        <ul id="specs">
+                            <li><label><input type="checkbox" value="wireless" data-type="spec"> Wireless</label></li>
+                            <li><label><input type="checkbox" value="8gb+" data-type="spec"> RAM 8GB+</label></li>
+                            <li><label><input type="checkbox" value="4k" data-type="spec"> 4K Support</label></li>
+                            <li><label><input type="checkbox" value="rgb" data-type="spec"> RGB Lighting</label></li>
+                        </ul>
+                    </div>
+                </aside>
+                <main class="shop-main">
+                    <div class="product-grid reveal-section" id="productGrid">
+
+                    </div>
+                </main>
+            </div>
+            <div class="no-results" id="noResults">
+                <img src="./assets/space.webp" alt="No results" class="no-results-img">
+                <h3>No Products Found</h3>
+                <p>Try adjusting your filters or clear all to see more results.</p>
+                <button class="btn btn-cart" id="clearFiltersBtn">Clear Filters</button>
+            </div>
+            <nav class="pagination" id="pagination">
+            </nav>
+        </div>
+
+        <button class="mobile-filter-btn" id="mobileFilterBtn">
+            <span class="material-icons">filter_list</span>
+            Filters
+        </button>
+
+        <div class="mobile-filter-panel" id="mobileFilterPanel">
+            <div class="mobile-filter-header">
+                <h3>Filters</h3>
+                <button class="close-panel material-icons" id="closeMobilePanel">close</button>
+            </div>
+        </div>
+
+        <div class="mobile-filter-overlay" id="mobileFilterOverlay"></div>
+        <section class="trade-in-section container">
+            <div class="trade-in-card glass-panel">
+
+                <div class="trade-in-content" data-aos="fade-up" data-aos-delay="fade-up">
+                    <div class="chips"
+                        style="border-color: var(--accent-secondary); color: var(--accent-secondary); margin-bottom: 1rem; display: inline-block;">
+                        Trade & Save</div>
+                    <h2>Upgrade Your <span class="text-gradient">Ecosystem</span></h2>
+                    <p>Trade in your old smartphone, tablet, or laptop and get up to <strong>$500 in instant store
+                            credit</strong> towards your next purchase.</p>
+
+                    <div class="trade-in-actions">
+                        <a href="404page.html" class="btn btn-cart">Get an Estimate</a>
+                        <a href="404page.html" class="btn btn-outline">How it Works</a>
+                    </div>
+                </div>
+
+                <div class="trade-in-img reveal-section" data-aos="fade-down" data-aos-delay="300">
+                    <div class="glow-circle"
+                        style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);">
+                    </div>
+                    <img src="./assets/old-device.webp" alt="Trade in your old devices"
+                        class="floating-device reveal-image1">
+                </div>
+
+            </div>
+        </section>
+        <section class="recent-views-section container">
+            <div class="section-header">
+                <h2 class="section-title">Recently <span class="text-gradient">Viewed</span></h2>
+            </div>
+
+            <div class="horizontal-scroller">
+
+                <div class="mini-tech-card glass-panel scroll-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mini-img-wrapper"><img src="./assets/wireless-mouse.webp" alt="Mouse"></div>
+                    <div class="mini-info">
+                        <h4>Pro Wireless Mouse</h4>
+                        <span class="font-mono text-gradient">$89.00</span>
+                    </div>
+                </div>
+
+                <div class="mini-tech-card glass-panel scroll-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="mini-img-wrapper"><img src="./assets/keyboard.webp" alt="Keyboard"></div>
+                    <div class="mini-info">
+                        <h4>Mech Keyboard V2</h4>
+                        <span class="font-mono text-gradient">$129.00</span>
+                    </div>
+                </div>
+
+                <div class="mini-tech-card glass-panel scroll-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="mini-img-wrapper"><img src="./assets/airpods-apple.webp" alt="Audio"></div>
+                    <div class="mini-info">
+                        <h4>AirPods Max</h4>
+                        <span class="font-mono text-gradient">$549.00</span>
+                    </div>
+                </div>
+
+                <div class="mini-tech-card glass-panel scroll-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="mini-img-wrapper"><img src="./assets/watch1.webp" alt="Watch"></div>
+                    <div class="mini-info">
+                        <h4>Galaxy Watch 6</h4>
+                        <span class="font-mono text-gradient">$299.00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="newsletter-section container">
+            <div class="newsletter-card glass-panel">
+                <div class="newsletter-content" data-aos="fade-down" data-aos-delay="200">
+                    <h2>Join the <span class="text-gradient">Tech Club</span></h2>
+                    <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                </div>
+
+                <form class="newsletter-form" onsubmit="event.preventDefault(); window.location.href='404page.html'"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="input-group">
+                        <span class="material-icons">mail_outline</span>
+                        <input type="email" placeholder="Enter your email address..." required>
+                        <button type="submit" class="btn btn-cart">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col brand-col reveal-section" data-aos="fade-up" data-aos-delay="200">
+                        <img src="./assets/Stackly-Logo-White.webp" alt="logo" class="logo reveal-image1">
+                        <p class="footer-desc">Premium electronics, unbeatable prices, and next-gen tech delivered right
+                            to your door.</p>
+                        <div class="social-links">
+                            <a href="404page.html" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="404page.html" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="404page.html" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="collections.html">Collections</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
+                        <h3>Categories</h3>
+                        <ul class="footer-links">
+                            <li><a href="404page.html">Laptops & PC</a></li>
+                            <li><a href="404page.html">Smartphones</a></li>
+                            <li><a href="404page.html">Audio & Sound</a></li>
+                            <li><a href="404page.html">Gaming Gear</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col contact-col" data-aos="fade-up" data-aos-delay="500">
+                        <h3>Contact Us</h3>
+                        <ul class="footer-links">
+                            <li><span class="material-icons">location_on</span> Stackly Phase1, Salem, Tamil Nadu</li>
+                            <li><span class="material-icons">phone</span> +91 9876543210</li>
+                            <li><span class="material-icons">email</span> support@thestackly.com</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Stackly. All rights reserved.</p>
+                    <div class="payment-methods">
+                        <div class="chips" style="padding: 4px 10px; font-size: 0.7rem; border: none;">Visa</div>
+                        <div class="chips" style="padding: 4px 10px; font-size: 0.7rem; border: none;">Mastercard</div>
+                        <div class="chips" style="padding: 4px 10px; font-size: 0.7rem; border: none;">PayPal</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out-cubic',
+                delay: 50,
+                offset: 100,
+                once: true,
+                mirror: false,
+                disable: 'mobile'
+            });
+        });
+
+        if (window.location.pathname.endsWith('shop.html')) {
+            const products = [
+                {
+                    id: 1,
+                    img1: './assets/alt-samsung.webp',
+                    img2: './assets/mob-samsung.webp',
+                    brand: 'Samsung',
+                    title: 'Galaxy S26 Ultra 5G',
+                    price: 1199,
+                    category: 'phones',
+                    brandName: 'Samsung',
+                    specs: ['Snapdragon 8 Gen 4', '200MP Camera'],
+                    rating: 4.8
+                },
+                {
+                    id: 2,
+                    img1: './assets/airpods-apple.webp',
+                    img2: './assets/airpods-apple1.webp',
+                    brand: 'Apple',
+                    title: 'AirPods Max',
+                    price: 499,
+                    category: 'audio',
+                    brandName: 'Apple',
+                    specs: ['ANC', 'Spatial Audio'],
+                    rating: 4.6
+                },
+                {
+                    id: 3,
+                    img1: './assets/gaming-lap.webp',
+                    img2: './assets/gaming-lap2.webp',
+                    brand: 'Razer',
+                    title: 'Blade 15 Advanced',
+                    price: 2499,
+                    category: 'gaming',
+                    brandName: 'Razer',
+                    specs: ['RTX 4080', '240Hz OLED'],
+                    rating: 4.9,
+                    specTags: ['8gb+', 'rgb']
+                },
+                {
+                    id: 4,
+                    img1: './assets/watch1.webp',
+                    img2: './assets/watch2.webp',
+                    brand: 'Samsung',
+                    title: 'Galaxy Watch 6',
+                    price: 299,
+                    category: 'wearables',
+                    brandName: 'Samsung',
+                    specs: ['ECG Monitor', '40h Battery'],
+                    rating: 4.4
+                },
+                {
+                    id: 5,
+                    img1: './assets/ps5.webp',
+                    img2: './assets/ps5-1.webp',
+                    brand: 'Sony',
+                    title: 'PlayStation 5 Pro',
+                    price: 699,
+                    category: 'gaming',
+                    brandName: 'Sony',
+                    specs: ['4K 120FPS', 'SSD 2TB'],
+                    rating: 4.9,
+                    specTags: ['4k']
+                },
+                {
+                    id: 6,
+                    img1: './assets/hp1.webp',
+                    img2: './assets/hp2.webp',
+                    brand: 'HP',
+                    title: 'Pavilion Gaming 16',
+                    price: 999,
+                    category: 'laptops',
+                    brandName: 'HP',
+                    specs: ['RTX 4060', '16GB RAM'],
+                    rating: 4.2,
+                    specTags: ['8gb+']
+                },
+                {
+                    id: 7,
+                    img1: './assets/drone1.webp',
+                    img2: './assets/drone2.webp',
+                    brand: 'DJI',
+                    title: 'Mini 3 Pro',
+                    price: 759,
+                    category: 'drones',
+                    brandName: 'DJI',
+                    specs: ['4K Video', '34min Flight'],
+                    rating: 4.7,
+                    specTags: ['4k', 'wireless']
+                },
+                {
+                    id: 8,
+                    img1: './assets/speaker.webp',
+                    img2: './assets/speaker1.webp',
+                    brand: 'JBL',
+                    title: 'Boombox 3',
+                    price: 399,
+                    category: 'audio',
+                    brandName: 'JBL',
+                    specs: ['IP67', '24h Playtime'],
+                    rating: 4.5,
+                    specTags: ['wireless']
+                },
+                {
+                    id: 9,
+                    img1: './assets/lap1.webp',
+                    img2: './assets/keyboard.webp',
+                    brand: 'Apple',
+                    title: 'MacBook Pro 14"',
+                    price: 1999,
+                    category: 'laptops',
+                    brandName: 'Apple',
+                    specs: ['M3 Pro', '18GB RAM'],
+                    rating: 4.8,
+                    specTags: ['8gb+']
+                },
+                {
+                    id: 10,
+                    img1: './assets/tv1.webp',
+                    img2: './assets/tv2.webp',
+                    brand: 'Sony',
+                    title: 'Bravia 65" OLED',
+                    price: 2199,
+                    category: 'tv',
+                    brandName: 'Sony',
+                    specs: ['4K 120Hz', 'Dolby Vision'],
+                    rating: 4.7,
+                    specTags: ['4k']
+                },
+                {
+                    id: 11,
+                    img1: './assets/mouse1.webp',
+                    img2: './assets/mouse2.webp',
+                    brand: 'Logitech',
+                    title: 'G Pro Wireless',
+                    price: 129,
+                    category: 'gaming',
+                    brandName: 'Logitech',
+                    specs: ['80g', 'HERO Sensor'],
+                    rating: 4.6,
+                    specTags: ['wireless', 'rgb']
+                },
+                {
+                    id: 12,
+                    img1: './assets/powerbank1.webp',
+                    img2: './assets/keyboard.webp',
+                    brand: 'Anker',
+                    title: '737 Power Bank',
+                    price: 149,
+                    category: 'accessories',
+                    brandName: 'Anker',
+                    specs: ['24,000mAh', '140W'],
+                    rating: 4.8
+                },
+                {
+                    id: 13,
+                    img1: './assets/alt-apple.webp',
+                    img2: './assets/mob-apple.webp',
+                    brand: 'Apple',
+                    title: 'iPhone 17 Pro',
+                    price: 1299,
+                    category: 'phones',
+                    brandName: 'Apple',
+                    specs: ['A19 Bionic', '48MP'],
+                    rating: 4.9
+                },
+                {
+                    id: 14,
+                    img1: './assets/alt-pixel.webp',
+                    img2: './assets/mob-pixel.webp',
+                    brand: 'Google',
+                    title: 'Pixel 9 Pro',
+                    price: 999,
+                    category: 'phones',
+                    brandName: 'Google',
+                    specs: ['Tensor G4', 'AI Camera'],
+                    rating: 4.5
+                }
+            ];
+
+            let filterState = {
+                categories: [],
+                brands: [],
+                minPrice: 0,
+                maxPrice: Infinity,
+                specs: [],
+                sort: 'price-asc',
+                page: 1,
+                perPage: 12
+            };
+
+            const elements = {
+                productGrid: document.getElementById('productGrid'),
+                noResults: document.getElementById('noResults'),
+                filterChips: document.getElementById('filterChips'),
+                resultCount: document.getElementById('resultCount'),
+                sortSelect: document.getElementById('sortSelect'),
+                clearAllBtn: document.getElementById('clearAllBtn'),
+                clearFiltersBtn: document.getElementById('clearFiltersBtn'),
+                applyPriceBtn: document.getElementById('applyPriceBtn'),
+                minPrice: document.getElementById('minPrice'),
+                maxPrice: document.getElementById('maxPrice'),
+                pagination: document.getElementById('pagination'),
+                mobileFilterBtn: document.getElementById('mobileFilterBtn'),
+                mobileFilterPanel: document.getElementById('mobileFilterPanel'),
+                mobileFilterOverlay: document.getElementById('mobileFilterOverlay'),
+                closeMobilePanel: document.getElementById('closeMobilePanel')
+            };
+
+            function matchesFilters(product) {
+                return (!filterState.categories.length || filterState.categories.includes(product.category)) &&
+                    (!filterState.brands.length || filterState.brands.includes(product.brandName)) &&
+                    product.price >= filterState.minPrice &&
+                    product.price <= filterState.maxPrice &&
+                    (!filterState.specs.length || filterState.specs.some(spec =>
+                        product.specTags?.includes(spec) || product.specs.some(s => s.toLowerCase().includes(spec.toLowerCase()))
+                    ));
+            }
+
+            function sortProducts(a, b) {
+                const multiplier = filterState.sort === 'price-desc' ? -1 : 1;
+                if (filterState.sort === 'price-asc' || filterState.sort === 'price-desc') {
+                    return multiplier * (a.price - b.price);
+                } else if (filterState.sort === 'newest') {
+                    return b.id - a.id;
+                } else if (filterState.sort === 'rating') {
+                    return b.rating - a.rating;
+                }
+                return 0;
+            }
+
+            function applyFilters() {
+                let filtered = products.filter(matchesFilters).sort(sortProducts);
+
+                const totalPages = Math.ceil(filtered.length / filterState.perPage);
+                filterState.page = Math.min(filterState.page, totalPages || 1);
+
+                const start = (filterState.page - 1) * filterState.perPage;
+                const end = start + filterState.perPage;
+                const paginated = filtered.slice(start, end);
+
+                renderProducts(paginated);
+                renderChips();
+                renderPagination(totalPages, filtered.length);
+                updateCount(filtered.length);
+
+                elements.noResults.style.display = paginated.length === 0 ? 'block' : 'none';
+                elements.productGrid.style.display = paginated.length === 0 ? 'none' : 'grid';
+            }
+
+            function renderProducts(products) {
+                elements.productGrid.innerHTML = products.map(product => `
+                <div class="tech-card card" data-product-id="${product.id}" data-aos='fade-up' data-aos-delay='200'>
+                    <div class="tech-badge">${Math.random() > 0.7 ? 'New' : 'Best'}</div>
+                    <div class="tech-img-wrapper">
+                        <img src="${product.img1}" alt="${product.title}" class="floating-device img1" loading="lazy">
+                        <img src="${product.img2}" alt="${product.title}" class="img2 floating-device" loading="lazy">
+                    </div>
+                    <div class="tech-info">
+                        <span class="tech-brand">${product.brand}</span>
+                        <h3 class="tech-title">${product.title}</h3>
+                        <p class="tech-price font-mono">$${product.price.toLocaleString()}</p>
+                    </div>
+                    <ul class="tech-specs">
+                        ${product.specs.slice(0, 2).map(spec => `<li><span class="material-icons">tune</span> ${spec}</li>`).join('')}
+                    </ul>
+                    <div class="tech-actions">
+                        <a href='404page.html' class="btn btn-cart full-width">Add to Cart</a>
+                        <a href='404page.html'  class="btn-icon glass-icon"><span class="material-icons">favorite_border</span></a>
+                    </div>
+                </div>
+            `).join('');
+            }
+
+            function renderChips() {
+                const chips = [];
+
+                filterState.categories.forEach(cat => chips.push(`Category: ${cat}`));
+                filterState.brands.forEach(brand => chips.push(`Brand: ${brand}`));
+                filterState.specs.forEach(spec => chips.push(`Spec: ${spec}`));
+
+                if (filterState.minPrice > 0 || filterState.maxPrice < Infinity) {
+                    chips.push(`Price: $${filterState.minPrice} - $${filterState.maxPrice === Infinity ? 'Any' : filterState.maxPrice}`);
+                }
+
+                elements.filterChips.innerHTML = chips.map(chip => `
+                <div class="filter-chip">
+                    ${chip}
+                    <button href="404page.html" class="remove-chip material-icons" data-chip="${chip}">close</button>
+                </div>
+            `).join('') || '';
+            }
+
+            function renderPagination(totalPages, totalResults) {
+                if (totalPages <= 1) {
+                    elements.pagination.innerHTML = '';
+                    return;
+                }
+
+                let html = '';
+                const maxVisible = 5;
+                const startPage = Math.max(1, filterState.page - Math.floor(maxVisible / 2));
+                const endPage = Math.min(totalPages, startPage + maxVisible - 1);
+
+                if (startPage > 1) {
+                    html += `<button onclick="shopApp.changePage(1)">1</button>`;
+                    if (startPage > 2) html += `<span>...</span>`;
+                }
+
+                for (let i = startPage; i <= endPage; i++) {
+                    html += `<button class="${i === filterState.page ? 'active' : ''}" onclick="shopApp.changePage(${i})">${i}</button>`;
+                }
+
+                if (endPage < totalPages) {
+                    if (endPage < totalPages - 1) html += `<span>...</span>`;
+                    html += `<button onclick="shopApp.changePage(${totalPages})">${totalPages}</button>`;
+                }
+
+                elements.pagination.innerHTML = html;
+            }
+
+            function updateCount(count) {
+                elements.resultCount.textContent = `(${count} Results)`;
+                document.getElementById('shopTitle').textContent = count === 0 ? 'No Results' : 'Products';
+            }
+
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                cb.addEventListener('change', (e) => {
+                    const type = e.target.dataset.type;
+                    const value = e.target.value;
+                    if (type === 'category') {
+                        toggleFilter('categories', value);
+                    } else if (type === 'brand') {
+                        toggleFilter('brands', value);
+                    } else if (type === 'spec') {
+                        toggleFilter('specs', value);
+                    }
+                    applyFilters();
+                });
+            });
+
+            document.querySelectorAll('.toggle-icon').forEach(icon => {
+                icon.addEventListener('click', (e) => {
+                    const target = e.target.dataset.target;
+                    const ul = document.getElementById(target);
+                    const iconEl = e.target;
+                    ul.parentElement.classList.toggle('open');
+                    iconEl.classList.toggle('rotated');
+                });
+            });
+
+            elements.sortSelect.addEventListener('change', (e) => {
+                filterState.sort = e.target.value;
+                applyFilters();
+            });
+
+            elements.clearAllBtn.addEventListener('click', () => resetFilters());
+            elements.clearFiltersBtn.addEventListener('click', () => resetFilters());
+
+            elements.applyPriceBtn.addEventListener('click', () => {
+                filterState.minPrice = parseInt(elements.minPrice.value) || 0;
+                filterState.maxPrice = parseInt(elements.maxPrice.value) || Infinity;
+                applyFilters();
+            });
+
+            elements.filterChips.addEventListener('click', (e) => {
+                if (e.target.classList.contains('remove-chip')) {
+                    const chipText = e.target.dataset.chip;
+                    console.log('Remove chip:', chipText);
+                    applyFilters();
+                }
+            });
+
+            elements.mobileFilterBtn.addEventListener('click', toggleMobilePanel);
+            elements.mobileFilterOverlay.addEventListener('click', closeMobilePanel);
+            elements.closeMobilePanel.addEventListener('click', closeMobilePanel);
+
+            function toggleMobilePanel() {
+                elements.mobileFilterPanel.classList.toggle('active');
+                elements.mobileFilterOverlay.style.display = 'block';
+            }
+
+            function closeMobilePanel() {
+                elements.mobileFilterPanel.classList.remove('active');
+                elements.mobileFilterOverlay.style.display = 'none';
+            }
+
+            function toggleFilter(arrayKey, value) {
+                const index = filterState[arrayKey].indexOf(value);
+                if (index > -1) {
+                    filterState[arrayKey].splice(index, 1);
+                } else {
+                    filterState[arrayKey].push(value);
+                }
+            }
+
+            function resetFilters() {
+                filterState = {
+                    categories: [],
+                    brands: [],
+                    minPrice: 0,
+                    maxPrice: Infinity,
+                    specs: [],
+                    sort: 'price-asc',
+                    page: 1,
+                    perPage: 12
+                };
+                document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+                elements.minPrice.value = '';
+                elements.maxPrice.value = '';
+                elements.sortSelect.value = 'price-asc';
+                applyFilters();
+            }
+
+            window.shopApp = {
+                changePage: (page) => {
+                    filterState.page = page;
+                    applyFilters();
+                }
+            };
+
+            applyFilters();
+        }
+
+    </script>
+</body>
+
+</html>

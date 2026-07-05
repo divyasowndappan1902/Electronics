@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Electronic Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="logo"><img src="logo.webp" alt="STACKLY Logo" class="logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="collection.html">Collection</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+    <div class="nav-icons">
+      <div class="mobile-menu-btn">☰</div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="shop-hero">
+      <h1 class="shop-title">Shop our <span class="text-gradient">Products</span></h1>
+    </section>
+
+    <!-- Controls -->
+    <section class="shop-controls">
+      <h1 class="shop-title" id="shopTitle" style="font-size:1.8rem;">All Products <span class="result-count" id="resultCount">(0 Results)</span></h1>
+      <div class="sort-wrapper">
+          <label for="sortSelect">Sort by:</label>
+          <select id="sortSelect">
+              <option value="price-asc">Price (Low to High)</option>
+              <option value="price-desc">Price (High to Low)</option>
+              <option value="newest">Newest</option>
+              <option value="rating">Top Rated</option>
+          </select>
+      </div>
+    </section>
+
+    <div class="filter-chips" id="filterChips"></div>
+
+    <!-- Shop Container -->
+    <div class="shop-container">
+      <aside class="filter-sidebar">
+          <h3 class="sidebar-title">Filters <button class="clear-all-btn" id="clearAllBtn">Clear All</button></h3>
+          
+          <div class="filter-section">
+              <h4>Categories <span class="toggle-icon material-icons" data-target="categories">expand_more</span></h4>
+              <ul id="categories">
+                  <li><label><input type="checkbox" value="phones" data-type="category"> Phones</label></li>
+                  <li><label><input type="checkbox" value="laptops" data-type="category"> Laptops</label></li>
+                  <li><label><input type="checkbox" value="audio" data-type="category"> Audio</label></li>
+                  <li><label><input type="checkbox" value="gaming" data-type="category"> Gaming</label></li>
+                  <li><label><input type="checkbox" value="wearables" data-type="category"> Wearables</label></li>
+                  <li><label><input type="checkbox" value="cameras" data-type="category"> Cameras</label></li>
+              </ul>
+          </div>
+
+          <div class="filter-section">
+              <h4>Price Range</h4>
+              <div class="price-inputs">
+                  <input type="number" id="minPrice" placeholder="Min" min="0" max="5000">
+                  <span>-</span>
+                  <input type="number" id="maxPrice" placeholder="Max" min="0" max="5000">
+                  <button class="apply-price-btn" id="applyPriceBtn">Apply</button>
+              </div>
+          </div>
+      </aside>
+
+      <main class="shop-main">
+          <div class="product-grid" id="productGrid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 2rem;">
+              <!-- Dynamically populated via JS -->
+          </div>
+          <div class="no-results" id="noResults">
+              <h3>No Products Found</h3>
+              <p>Try adjusting your filters to see more results.</p>
+              <button class="btn" id="clearFiltersBtn">Clear Filters</button>
+          </div>
+          <nav class="pagination" id="pagination"></nav>
+      </main>
+    </div>
+  </div>
+
+  <!-- Features & Benefits -->
+  <section class="shop-features container">
+    <h2 class="features-title">Why Shop With Us?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <img src="feat_collection.webp" alt="Latest Electronics Collection" class="feature-img">
+        <h3>Latest Electronics Collection</h3>
+        <p>Explore the newest smartphones, laptops, smart TVs, accessories, and home appliances from trusted brands.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feat_bestsellers.webp" alt="Best Selling Products" class="feature-img">
+        <h3>Best Selling Products</h3>
+        <p>Discover our most popular products, chosen by customers for their quality, performance, and value.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feat_arrivals.webp" alt="New Arrivals" class="feature-img">
+        <h3>New Arrivals</h3>
+        <p>Stay updated with the latest gadgets and technology added to our store every week.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feat_offers.webp" alt="Exclusive Offers & Discounts" class="feature-img">
+        <h3>Exclusive Offers</h3>
+        <p>Enjoy exciting deals, seasonal discounts, combo offers, and limited-time promotions.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feat_brands.webp" alt="Top Brands" class="feature-img">
+        <h3>Top Brands</h3>
+        <p>Shop premium products from leading brands with genuine quality and official warranty.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feat_quality.webp" alt="Quality Guarantee" class="feature-img">
+        <h3>Quality Guarantee</h3>
+        <p>Every product is carefully selected to ensure high quality, durability, and reliable performance.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feat_delivery.webp" alt="Fast & Secure Delivery" class="feature-img">
+        <h3>Fast & Secure Delivery</h3>
+        <p>We provide safe packaging, quick shipping, and timely delivery to your doorstep.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feat_returns.webp" alt="Easy Returns & Support" class="feature-img">
+        <h3>Easy Returns</h3>
+        <p>Shop with confidence through our hassle-free return policy and dedicated customer support.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feat_prices.webp" alt="Affordable Prices" class="feature-img">
+        <h3>Affordable Prices</h3>
+        <p>Get the best technology at competitive prices without compromising on quality.</p>
+      </div>
+      <div class="feature-card">
+        <img src="feat_whyus.webp" alt="Why Shop With Us?" class="feature-img">
+        <h3>Why Shop With Us?</h3>
+        <p>We offer genuine products, trusted brands, secure payments, and a smooth shopping experience.</p>
+      </div>
+    </div>
+  </section>
+
+    <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="logo"><img src="logo.webp" alt="STACKLY Logo" class="logo-img"></a>
+          <p class="footer-desc">Premium electronics, unbeatable prices, and next-gen tech delivered right to your door.</p>
+          <div class="social-links">
+            <a href="404.html" class="social-icon"><span class="material-icons" style="font-size: 1.2rem;">camera_alt</span></a>
+            <a href="404.html" class="social-icon"><span class="material-icons" style="font-size: 1.2rem;">facebook</span></a>
+            <a href="404.html" class="social-icon"><span class="material-icons" style="font-size: 1.2rem;">smart_display</span></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="collection.html">Collections</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Categories</h3>
+          <ul class="footer-links">
+            <li><a href="404.html">Laptops & PC</a></li>
+            <li><a href="404.html">Smartphones</a></li>
+            <li><a href="404.html">Audio & Sound</a></li>
+            <li><a href="404.html">Gaming Gear</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h3>Contact Us</h3>
+          <ul class="footer-links">
+            <li><span class="material-icons" style="color: #ef4444; margin-right: 8px;">location_on</span> Stackly Phase1, Salem, Tamil Nadu</li>
+            <li><span class="material-icons" style="color: #ef4444; margin-right: 8px;">phone</span> +91 9876543210</li>
+            <li><span class="material-icons" style="color: #ef4444; margin-right: 8px;">email</span> support@thestackly.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly. All rights reserved.</p>
+        <div class="payment-methods">
+          <div class="chips">Visa</div>
+          <div class="chips">Mastercard</div>
+          <div class="chips">PayPal</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+      const products = [
+          { id: 1, img: "studio-speaker.webp", title: "Studio Speaker", price: 299, category: "audio", rating: 4.8 },
+          { id: 2, img: "prod_camera.webp", title: "Pro Camera", price: 1299, category: "cameras", rating: 4.9 },
+          { id: 3, img: "prod_xphone.webp", title: "X Phone", price: 999, category: "phones", rating: 4.7 },
+          { id: 4, img: "prod_band.webp", title: "Fitness Band", price: 99, category: "wearables", rating: 4.3 },
+          { id: 5, img: "prod_controller.webp", title: "Pro Controller", price: 69, category: "gaming", rating: 4.5 },
+          { id: 6, img: "prod_watch.webp", title: "Sport Watch", price: 199, category: "wearables", rating: 4.6 },
+          { id: 7, img: "prod_headphones.webp", title: "Premium Headphones", price: 296, category: "audio", rating: 4.8 },
+          { id: 8, img: "prod_keyboard.webp", title: "RGB Keyboard", price: 79, category: "gaming", rating: 4.4 },
+          { id: 9, img: "prod_laptop.webp", title: "Creator Pro Laptop", price: 2499, category: "laptops", rating: 4.9 },
+          { id: 10, img: "prod_vr.webp", title: "VR Headset", price: 399, category: "gaming", rating: 4.5 },
+          { id: 11, img: "prod_camera.webp", title: "Vlog Camera", price: 899, category: "cameras", rating: 4.6 },
+          { id: 12, img: "smartphone_flagship.webp", title: "Flagship Smartphone", price: 1099, category: "phones", rating: 4.9 },
+          { id: 13, img: "smartphone_foldable.webp", title: "Foldable Smartphone", price: 1499, category: "phones", rating: 4.8 },
+          { id: 14, img: "smartphone_gaming.webp", title: "Gaming Smartphone", price: 899, category: "phones", rating: 4.7 },
+          { id: 15, img: "smartphone_budget.webp", title: "Budget Smartphone", price: 299, category: "phones", rating: 4.2 },
+          { id: 16, img: "smartphone_rugged.webp", title: "Rugged Smartphone", price: 499, category: "phones", rating: 4.5 }
+      ];
+
+      let filterState = {
+          categories: [],
+          minPrice: 0,
+          maxPrice: Infinity,
+          sort: 'price-asc',
+          page: 1,
+          perPage: 9
+      };
+
+      const elements = {
+          productGrid: document.getElementById('productGrid'),
+          noResults: document.getElementById('noResults'),
+          filterChips: document.getElementById('filterChips'),
+          resultCount: document.getElementById('resultCount'),
+          sortSelect: document.getElementById('sortSelect'),
+          clearAllBtn: document.getElementById('clearAllBtn'),
+          clearFiltersBtn: document.getElementById('clearFiltersBtn'),
+          applyPriceBtn: document.getElementById('applyPriceBtn'),
+          minPrice: document.getElementById('minPrice'),
+          maxPrice: document.getElementById('maxPrice'),
+          pagination: document.getElementById('pagination')
+      };
+
+      function matchesFilters(product) {
+          return (!filterState.categories.length || filterState.categories.includes(product.category)) &&
+                 product.price >= filterState.minPrice &&
+                 product.price <= filterState.maxPrice;
+      }
+
+      function sortProducts(a, b) {
+          const multiplier = filterState.sort === 'price-desc' ? -1 : 1;
+          if (filterState.sort === 'price-asc' || filterState.sort === 'price-desc') {
+              return multiplier * (a.price - b.price);
+          } else if (filterState.sort === 'newest') {
+              return b.id - a.id;
+          } else if (filterState.sort === 'rating') {
+              return b.rating - a.rating;
+          }
+          return 0;
+      }
+
+      function applyFilters() {
+          let filtered = products.filter(matchesFilters).sort(sortProducts);
+
+          const totalPages = Math.ceil(filtered.length / filterState.perPage);
+          filterState.page = Math.min(filterState.page, totalPages || 1);
+
+          const start = (filterState.page - 1) * filterState.perPage;
+          const end = start + filterState.perPage;
+          const paginated = filtered.slice(start, end);
+
+          renderProducts(paginated);
+          renderChips();
+          renderPagination(totalPages, filtered.length);
+          updateCount(filtered.length);
+
+          elements.noResults.style.display = paginated.length === 0 ? 'block' : 'none';
+          elements.productGrid.style.display = paginated.length === 0 ? 'none' : 'grid';
+      }
+
+      function renderProducts(products) {
+          elements.productGrid.innerHTML = products.map(product => `
+          <div class="product-card">
+              <div class="product-img-wrapper">
+                  <img src="${product.img}" alt="${product.title}">
+              </div>
+              <div class="product-info">
+                  <div style="color:#f59e0b; margin-bottom:5px; font-size:0.9rem;">
+                      ${'★'.repeat(Math.round(product.rating))}${'☆'.repeat(5-Math.round(product.rating))}
+                  </div>
+                  <h3 class="product-title">${product.title}</h3>
+                  <div class="product-price">$${product.price.toLocaleString()}</div>
+              </div>
+              <div style="padding: 0 1.5rem 1.5rem;">
+                  <button class="btn" style="width: 100%;" onclick="window.location.href='404.html'">Add to Cart</button>
+              </div>
+          </div>
+          `).join('');
+      }
+
+      function renderChips() {
+          const chips = [];
+          filterState.categories.forEach(cat => chips.push(`Category: ${cat}`));
+          if (filterState.minPrice > 0 || filterState.maxPrice < Infinity) {
+              chips.push(`Price: $${filterState.minPrice} - $${filterState.maxPrice === Infinity ? 'Any' : filterState.maxPrice}`);
+          }
+
+          elements.filterChips.innerHTML = chips.map(chip => `
+          <div class="filter-chip">
+              ${chip}
+              <button class="remove-chip material-icons" data-chip="${chip}">close</button>
+          </div>
+          `).join('') || '';
+      }
+
+      function renderPagination(totalPages) {
+          if (totalPages <= 1) {
+              elements.pagination.innerHTML = '';
+              return;
+          }
+          let html = '';
+          for (let i = 1; i <= totalPages; i++) {
+              html += `<button class="${i === filterState.page ? 'active' : ''}" onclick="window.shopApp.changePage(${i})">${i}</button>`;
+          }
+          elements.pagination.innerHTML = html;
+      }
+
+      function updateCount(count) {
+          elements.resultCount.textContent = `(${count} Results)`;
+      }
+
+      document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+          cb.addEventListener('change', (e) => {
+              const value = e.target.value;
+              const index = filterState.categories.indexOf(value);
+              if (index > -1) {
+                  filterState.categories.splice(index, 1);
+              } else {
+                  filterState.categories.push(value);
+              }
+              applyFilters();
+          });
+      });
+
+      document.querySelectorAll('.toggle-icon').forEach(icon => {
+          icon.addEventListener('click', (e) => {
+              const target = e.target.dataset.target;
+              const ul = document.getElementById(target);
+              ul.style.display = ul.style.display === 'none' ? 'block' : 'none';
+              e.target.classList.toggle('rotated');
+          });
+      });
+
+      elements.sortSelect.addEventListener('change', (e) => {
+          filterState.sort = e.target.value;
+          applyFilters();
+      });
+
+      function resetFilters() {
+          filterState.categories = [];
+          filterState.minPrice = 0;
+          filterState.maxPrice = Infinity;
+          document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+          elements.minPrice.value = '';
+          elements.maxPrice.value = '';
+          applyFilters();
+      }
+
+      elements.clearAllBtn.addEventListener('click', resetFilters);
+      elements.clearFiltersBtn.addEventListener('click', resetFilters);
+
+      elements.applyPriceBtn.addEventListener('click', () => {
+          filterState.minPrice = parseInt(elements.minPrice.value) || 0;
+          filterState.maxPrice = parseInt(elements.maxPrice.value) || Infinity;
+          applyFilters();
+      });
+
+      elements.filterChips.addEventListener('click', (e) => {
+          if (e.target.classList.contains('remove-chip')) {
+              resetFilters();
+          }
+      });
+
+      window.shopApp = {
+          changePage: (page) => {
+              filterState.page = page;
+              applyFilters();
+          }
+      };
+
+      applyFilters();
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Main Navbar Toggle
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+      });
+    }
+
+    // Dashboard Sidebar Toggle
+    const sidebarToggle = document.querySelector('.mobile-sidebar-toggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    if (sidebarToggle && sidebar) {
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
+    }
+  });
+</script>
+</body>
+</html>
+

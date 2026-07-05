@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Electronic Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <a href="index.html" class="sidebar-logo" style="display:block; text-decoration:none;"><img src="logo.webp" alt="STACKLY Logo" class="logo-img"></a>
+      <nav class="sidebar-nav">
+        <a href="admin_dashboard.html">📊 Dashboard</a>
+        <a href="admin-orders.html">📦 Orders</a>
+        <a href="admin-products.html">🏷️ Products</a>
+        <a href="admin-customers.html">👥 Customers</a>
+        <a href="admin-analytics.html">📈 Analytics</a>
+        <a href="admin-settings.html">⚙️ Settings</a>
+      </nav>
+      <div style="padding: 2rem; border-top: 1px solid #eaeaea;">
+        <a href="login.html" style="color: var(--text-light); display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">🚪 Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="mobile-sidebar-toggle" style="display: none;">☰</div>
+        <div class="topbar-search">
+          <input type="text" placeholder="Search orders, customers, or products...">
+        </div>
+        <div class="topbar-profile">
+          <div style="font-size: 1.5rem; cursor: pointer;" onclick="window.location.href='404.html'">🔔 <span style="font-size: 0.8rem; background: var(--primary-color); color: white; border-radius: 50%; padding: 2px 6px; position: relative; top: -10px; left: -10px;">12</span></div>
+          <!-- Unique Role Indicator -->
+          <span id="userEmailDisplay" style="margin-right: 15px; font-weight: 500; color: var(--text-dark);"></span>
+          <div class="role-badge badge-admin">Admin</div>
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Admin" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; cursor: pointer;">
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Sales Analytics</h2>
+            <p style="color: var(--text-light);">Track your store's performance metrics.</p>
+          </div>
+          <select style="padding: 10px 15px; border-radius: 8px; border: 1px solid #eaeaea; font-family: inherit; font-size: 0.95rem; outline: none;">
+            <option>Last 7 Days</option>
+            <option>Last 30 Days</option>
+            <option>This Year</option>
+          </select>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem;">
+          <!-- Main Chart -->
+          <div style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem;">Revenue Overview</h3>
+            <div style="height: 300px; display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; padding-bottom: 1rem; border-bottom: 1px solid #eaeaea;">
+              <!-- CSS Mock Chart Bars -->
+              <div style="width: 100%; height: 40%; background: var(--primary-color); border-radius: 4px 4px 0 0; opacity: 0.6;"></div>
+              <div style="width: 100%; height: 60%; background: var(--primary-color); border-radius: 4px 4px 0 0; opacity: 0.7;"></div>
+              <div style="width: 100%; height: 30%; background: var(--primary-color); border-radius: 4px 4px 0 0; opacity: 0.5;"></div>
+              <div style="width: 100%; height: 80%; background: var(--primary-color); border-radius: 4px 4px 0 0; opacity: 0.9;"></div>
+              <div style="width: 100%; height: 50%; background: var(--primary-color); border-radius: 4px 4px 0 0; opacity: 0.6;"></div>
+              <div style="width: 100%; height: 100%; background: var(--primary-color); border-radius: 4px 4px 0 0; opacity: 1;"></div>
+              <div style="width: 100%; height: 75%; background: var(--primary-color); border-radius: 4px 4px 0 0; opacity: 0.8;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 1rem; color: var(--text-light); font-size: 0.85rem;">
+              <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+          </div>
+
+          <!-- Top Products -->
+          <div style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
+            <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem;">Top Selling Categories</h3>
+            
+            <div style="margin-bottom: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                <span style="font-weight: 600;">Electronics</span>
+                <span>45%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: #eaeaea; border-radius: 4px;">
+                <div style="width: 45%; height: 100%; background: var(--primary-color); border-radius: 4px;"></div>
+              </div>
+            </div>
+            
+            <div style="margin-bottom: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                <span style="font-weight: 600;">Wearables</span>
+                <span>30%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: #eaeaea; border-radius: 4px;">
+                <div style="width: 30%; height: 100%; background: #2196F3; border-radius: 4px;"></div>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                <span style="font-weight: 600;">Accessories</span>
+                <span>15%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: #eaeaea; border-radius: 4px;">
+                <div style="width: 15%; height: 100%; background: #4CAF50; border-radius: 4px;"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                <span style="font-weight: 600;">Photography</span>
+                <span>10%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: #eaeaea; border-radius: 4px;">
+                <div style="width: 10%; height: 100%; background: #FF9800; border-radius: 4px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const email = localStorage.getItem('userEmail') || 'user@example.com';
+      const emailDisplay = document.getElementById('userEmailDisplay');
+      if (emailDisplay) {
+        emailDisplay.textContent = email;
+      }
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Main Navbar Toggle
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+      });
+    }
+
+    // Dashboard Sidebar Toggle
+    const sidebarToggle = document.querySelector('.mobile-sidebar-toggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    if (sidebarToggle && sidebar) {
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
+    }
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

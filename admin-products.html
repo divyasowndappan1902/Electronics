@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Electronic Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <a href="index.html" class="sidebar-logo" style="display:block; text-decoration:none;"><img src="logo.webp" alt="STACKLY Logo" class="logo-img"></a>
+      <nav class="sidebar-nav">
+        <a href="admin_dashboard.html">📊 Dashboard</a>
+        <a href="admin-orders.html">📦 Orders</a>
+        <a href="admin-products.html">🏷️ Products</a>
+        <a href="admin-customers.html">👥 Customers</a>
+        <a href="admin-analytics.html">📈 Analytics</a>
+        <a href="admin-settings.html">⚙️ Settings</a>
+      </nav>
+      <div style="padding: 2rem; border-top: 1px solid #eaeaea;">
+        <a href="login.html" style="color: var(--text-light); display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">🚪 Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="mobile-sidebar-toggle" style="display: none;">☰</div>
+        <div class="topbar-search">
+          <input type="text" placeholder="Search orders, customers, or products...">
+        </div>
+        <div class="topbar-profile">
+          <div style="font-size: 1.5rem; cursor: pointer;">🔔 <span style="font-size: 0.8rem; background: var(--primary-color); color: white; border-radius: 50%; padding: 2px 6px; position: relative; top: -10px; left: -10px;">12</span></div>
+          <!-- Unique Role Indicator -->
+          <span id="userEmailDisplay" style="margin-right: 15px; font-weight: 500; color: var(--text-dark);"></span>
+          <div class="role-badge badge-admin">Admin</div>
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Admin" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; cursor: pointer;">
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        <div class="dashboard-table-container">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <div>
+              <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Manage Products</h2>
+              <p style="color: var(--text-light);">Add, edit, and track your store's inventory.</p>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <div class="topbar-search" style="width: auto;">
+                <input type="text" placeholder="Search products..." style="width: 250px;">
+              </div>
+              <button class="btn" onclick="window.location.href='404.html'">+ Add Product</button>
+            </div>
+          </div>
+          
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>Product Info</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="display: flex; align-items: center; gap: 1rem;">
+                  <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&q=80" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 600;">Premium Headphones</div>
+                    <div style="font-size: 0.8rem; color: var(--text-light);">SKU: HD-001</div>
+                  </div>
+                </td>
+                <td>Audio</td>
+                <td style="font-weight: 600;">$299.99</td>
+                <td>124</td>
+                <td><span class="status-pill status-completed">In Stock</span></td>
+                <td>
+                  <a href="404.html" style="color: var(--primary-color); font-weight: 600; font-size: 0.9rem; margin-right: 1rem;">Edit</a>
+                  <a href="404.html" style="color: #ff5252; font-weight: 600; font-size: 0.9rem;">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="display: flex; align-items: center; gap: 1rem;">
+                  <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=100&q=80" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 600;">Instant Camera</div>
+                    <div style="font-size: 0.8rem; color: var(--text-light);">SKU: CAM-002</div>
+                  </div>
+                </td>
+                <td>Photography</td>
+                <td style="font-weight: 600;">$129.99</td>
+                <td>0</td>
+                <td><span class="status-pill" style="background: rgba(255, 82, 82, 0.1); color: #ff5252;">Out of Stock</span></td>
+                <td>
+                  <a href="404.html" style="color: var(--primary-color); font-weight: 600; font-size: 0.9rem; margin-right: 1rem;">Edit</a>
+                  <a href="404.html" style="color: #ff5252; font-weight: 600; font-size: 0.9rem;">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="display: flex; align-items: center; gap: 1rem;">
+                  <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=100&q=80" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 600;">Smart Watch Series 5</div>
+                    <div style="font-size: 0.8rem; color: var(--text-light);">SKU: SW-005</div>
+                  </div>
+                </td>
+                <td>Wearables</td>
+                <td style="font-weight: 600;">$399.00</td>
+                <td>12</td>
+                <td><span class="status-pill status-pending">Low Stock</span></td>
+                <td>
+                  <a href="404.html" style="color: var(--primary-color); font-weight: 600; font-size: 0.9rem; margin-right: 1rem;">Edit</a>
+                  <a href="404.html" style="color: #ff5252; font-weight: 600; font-size: 0.9rem;">Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; border-top: 1px solid #eaeaea; padding-top: 2rem;">
+            <div style="color: var(--text-light); font-size: 0.9rem;">Showing 1 to 3 of 156 products</div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn" style="padding: 8px 16px; background: white; color: var(--text-dark); border: 1px solid #eaeaea;" onclick="window.location.href='404.html'">Previous</button>
+              <button class="btn" style="padding: 8px 16px;" onclick="window.location.href='404.html'">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const email = localStorage.getItem('userEmail') || 'user@example.com';
+      const emailDisplay = document.getElementById('userEmailDisplay');
+      if (emailDisplay) {
+        emailDisplay.textContent = email;
+      }
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Main Navbar Toggle
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('nav-active');
+      });
+    }
+
+    // Dashboard Sidebar Toggle
+    const sidebarToggle = document.querySelector('.mobile-sidebar-toggle');
+    const sidebar = document.querySelector('.dashboard-sidebar');
+    if (sidebarToggle && sidebar) {
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+      });
+    }
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
