@@ -6,13 +6,15 @@
   <title>Login - Electronic Store</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body style="overflow: hidden;">
   
   <div class="split-layout">
     <!-- Left Side: Immersive Generated Image -->
     <div class="split-left">
-      <img src="assets/login-lifestyle.png" alt="Premium Workspace Setup">
+      <img src="assets/login-lifestyle.webp" alt="Premium Workspace Setup">
       <!-- Overlay text -->
       <div style="position: absolute; bottom: 10%; left: 10%; right: 10%; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
         <h2 style="font-size: 3rem; margin-bottom: 1rem; color: white;">Elevate your<br>digital lifestyle.</h2>
@@ -146,5 +148,21 @@
     }
   });
 </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.product-card, .section-title, .hero, .flash-sale-banner, .brands-marquee, .feature-card, .blog-post, .split-left, .split-right, .login-glass-card, .auth-form, .stat-card, .dashboard-card, .chart-container, .contact-info, .contact-form, .faq-item, .collection-card, .cart-item, .order-card, .address-card, .payment-card, .shop-sidebar, .shop-main, .account-sidebar, .account-content, .settings-section, .error-content');
+      elements.forEach(el => {
+        if (!el.hasAttribute('data-aos')) {
+          el.setAttribute('data-aos', 'fade-up');
+          el.setAttribute('data-aos-duration', '800');
+        }
+      });
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ once: true });
+      }
+    });
+  </script>
 </body>
 </html>

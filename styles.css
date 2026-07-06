@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --primary-color: #f42c54;
-  --primary-hover: #d81b43;
+  --primary-color: #ef3832;
+  --primary-hover: #d32f2f;
   --text-dark: #111111;
   --text-light: #555555;
   --bg-color: #ffffff;
@@ -49,12 +49,12 @@ p { color: var(--text-light); margin-bottom: 1rem; }
   transition: var(--transition);
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(244, 44, 84, 0.2);
+  box-shadow: 0 4px 15px rgba(239, 56, 50, 0.2);
 }
 .btn:hover {
   background-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(244, 44, 84, 0.3);
+  box-shadow: 0 6px 20px rgba(239, 56, 50, 0.3);
 }
 .btn-outline {
   background-color: transparent;
@@ -201,7 +201,7 @@ footer { background-color: var(--bg-secondary); padding: 4rem 5% 2rem; border-to
 .role-selector { display: flex; background: #eaeaea; border-radius: 30px; position: relative; margin-bottom: 2rem; padding: 4px; user-select: none; }
 .role-option { flex: 1; text-align: center; padding: 12px 0; z-index: 2; cursor: pointer; font-weight: 600; color: var(--text-light); transition: color 0.3s ease; }
 .role-option.active { color: white; }
-.role-slider { position: absolute; top: 4px; left: 4px; bottom: 4px; width: calc(50% - 4px); background: var(--primary-color); border-radius: 30px; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1; box-shadow: 0 4px 10px rgba(244, 44, 84, 0.3); }
+.role-slider { position: absolute; top: 4px; left: 4px; bottom: 4px; width: calc(50% - 4px); background: var(--primary-color); border-radius: 30px; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1; box-shadow: 0 4px 10px rgba(239, 56, 50, 0.3); }
 .role-selector[data-role="admin"] .role-slider { transform: translateX(100%); }
 
 /* Dashboards */
@@ -211,14 +211,14 @@ footer { background-color: var(--bg-secondary); padding: 4rem 5% 2rem; border-to
 .sidebar-logo span { color: var(--primary-color); }
 .sidebar-nav { padding: 2rem 0; flex: 1; overflow-y: auto; }
 .sidebar-nav a { display: flex; align-items: center; gap: 1rem; padding: 1rem 2rem; color: var(--text-light); transition: var(--transition); font-weight: 500; font-size: 1.05rem; }
-.sidebar-nav a:hover, .sidebar-nav a.active { background: rgba(244, 44, 84, 0.05); color: var(--primary-color); border-right: 4px solid var(--primary-color); }
+.sidebar-nav a:hover, .sidebar-nav a.active { background: rgba(239, 56, 50, 0.05); color: var(--primary-color); border-right: 4px solid var(--primary-color); }
 .dashboard-main { flex: 1; display: flex; flex-direction: column; overflow-y: auto; }
 .dashboard-topbar { background: white; height: var(--nav-height); border-bottom: 1px solid #eaeaea; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; position: sticky; top: 0; z-index: 100; }
 .topbar-search input { border: none; background: var(--bg-secondary); padding: 12px 25px; border-radius: 25px; width: 350px; font-family: inherit; font-size: 1rem; outline: none; transition: box-shadow 0.3s; }
 .topbar-search input:focus { box-shadow: 0 0 0 2px rgba(244,44,84,0.2); }
 .topbar-profile { display: flex; align-items: center; gap: 1.5rem; }
 .role-badge { padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-.badge-admin { background: rgba(244, 44, 84, 0.1); color: var(--primary-color); border: 1px solid rgba(244, 44, 84, 0.2); }
+.badge-admin { background: rgba(239, 56, 50, 0.1); color: var(--primary-color); border: 1px solid rgba(239, 56, 50, 0.2); }
 .badge-customer { background: rgba(33, 150, 243, 0.1); color: #2196F3; border: 1px solid rgba(33, 150, 243, 0.2); }
 .dashboard-content { padding: 2.5rem; }
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-bottom: 2.5rem; }
@@ -279,7 +279,7 @@ footer { background-color: var(--bg-secondary); padding: 4rem 5% 2rem; border-to
 .collection-card-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.8s ease; z-index: 1; }
 .collection-card:hover .collection-card-bg { transform: scale(1.1); }
 .collection-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%); z-index: 2; transition: background 0.4s ease; }
-.collection-card:hover .collection-card-overlay { background: linear-gradient(to top, rgba(244, 44, 84, 0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%); }
+.collection-card:hover .collection-card-overlay { background: linear-gradient(to top, rgba(239, 56, 50, 0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%); }
 .collection-card-content { position: relative; z-index: 3; }
 .collection-card-title { font-size: 1.6rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
 .collection-card-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 10px 24px; background: rgba(255,255,255,0.2); backdrop-filter: blur(8px); border-radius: 30px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease; }

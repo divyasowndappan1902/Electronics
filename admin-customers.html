@@ -6,6 +6,8 @@
   <title>Admin Dashboard - Electronic Store</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   
@@ -167,6 +169,22 @@
     }
   });
 </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('.product-card, .section-title, .hero, .flash-sale-banner, .brands-marquee, .feature-card, .blog-post, .split-left, .split-right, .login-glass-card, .auth-form, .stat-card, .dashboard-card, .chart-container, .contact-info, .contact-form, .faq-item, .collection-card, .cart-item, .order-card, .address-card, .payment-card, .shop-sidebar, .shop-main, .account-sidebar, .account-content, .settings-section, .error-content');
+      elements.forEach(el => {
+        if (!el.hasAttribute('data-aos')) {
+          el.setAttribute('data-aos', 'fade-up');
+          el.setAttribute('data-aos-duration', '800');
+        }
+      });
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ once: true });
+      }
+    });
+  </script>
 </body>
 </html>
 
