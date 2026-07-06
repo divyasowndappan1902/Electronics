@@ -224,7 +224,7 @@ footer { background-color: var(--bg-secondary); padding: 4rem 5% 2rem; border-to
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-bottom: 2.5rem; }
 .stat-card { background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
 .stat-value { font-size: 2.5rem; font-weight: 800; margin-top: 0.5rem; color: var(--text-dark); }
-.dashboard-table-container { background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+.dashboard-table-container { background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.03); overflow-x: auto; }
 .dashboard-table { width: 100%; border-collapse: collapse; }
 .dashboard-table th, .dashboard-table td { padding: 1.2rem 1rem; text-align: left; border-bottom: 1px solid #f0f0f0; }
 .dashboard-table th { color: var(--text-light); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
@@ -778,4 +778,8 @@ footer { background-color: var(--bg-secondary); padding: 4rem 5% 2rem; border-to
   .product-grid, .collections-hub { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
   .topbar-profile { gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end; }
   .role-badge { display: none; } /* Hide on small screens for space */
+
+  /* Input Scaling for mobile */
+  input, textarea, select { max-width: 100%; box-sizing: border-box; }
 }
+

@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -30,7 +31,7 @@
     <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6);"></div>
     <div class="container" style="position: relative; z-index: 2;">
       <h1 style="font-size: 3.5rem; margin-bottom: 0.5rem;">Contact Us</h1>
-      <p style="font-size: 1.2rem; opacity: 0.9;">We're here to help and answer any question you might have.</p>
+      <p style="font-size: 1.2rem; opacity: 0.9; color: white;">We're here to help and answer any question you might have.</p>
     </div>
   </header>
 
@@ -175,9 +176,9 @@
           <a href="index.html" class="logo"><img src="logo.webp" alt="STACKLY Logo" class="logo-img"></a>
           <p class="footer-desc">Premium electronics, unbeatable prices, and next-gen tech delivered right to your door.</p>
           <div class="social-links">
-            <a href="404.html" class="social-icon"><span class="material-icons" style="font-size: 1.2rem;">camera_alt</span></a>
-            <a href="404.html" class="social-icon"><span class="material-icons" style="font-size: 1.2rem;">facebook</span></a>
-            <a href="404.html" class="social-icon"><span class="material-icons" style="font-size: 1.2rem;">smart_display</span></a>
+            <a href="404.html" class="social-icon"><i class="fab fa-instagram" style="font-size: 1.2rem;"></i></a>
+            <a href="404.html" class="social-icon"><i class="fab fa-facebook-f" style="font-size: 1.2rem;"></i></a>
+            <a href="404.html" class="social-icon"><i class="fab fa-youtube" style="font-size: 1.2rem;"></i></a>
           </div>
         </div>
 
@@ -204,9 +205,9 @@
         <div class="footer-col contact-col">
           <h3>Contact Us</h3>
           <ul class="footer-links">
-            <li><span class="material-icons" style="color: #ef4444; margin-right: 8px;">location_on</span> Stackly Phase1, Salem, Tamil Nadu</li>
-            <li><span class="material-icons" style="color: #ef4444; margin-right: 8px;">phone</span> +91 9876543210</li>
-            <li><span class="material-icons" style="color: #ef4444; margin-right: 8px;">email</span> support@thestackly.com</li>
+            <li><i class="fas fa-location-dot" style="color: #ef4444; margin-right: 8px;"></i> Stackly Phase1, Salem, Tamil Nadu</li>
+            <li><i class="fas fa-phone" style="color: #ef4444; margin-right: 8px;"></i> +91 9876543210</li>
+            <li><i class="fas fa-envelope" style="color: #ef4444; margin-right: 8px;"></i> support@thestackly.com</li>
           </ul>
         </div>
       </div>
@@ -226,14 +227,6 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Main Navbar Toggle
-    const mobileBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    if (mobileBtn && navLinks) {
-      mobileBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-active');
-      });
-    }
 
     // Dashboard Sidebar Toggle
     const sidebarToggle = document.querySelector('.mobile-sidebar-toggle');
