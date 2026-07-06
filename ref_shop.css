@@ -1,3 +1,7 @@
+body {
+    min-width: 320px;
+}
+
 :root {
     --bg-main: #0F1117;
     --bg-surface: #1C1F26;
