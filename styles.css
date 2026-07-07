@@ -784,3 +784,8 @@ footer { background-color: var(--bg-secondary); padding: 4rem 5% 2rem; border-to
   input, textarea, select { max-width: 100%; box-sizing: border-box; }
 }
 
+@media (max-width: 320px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
