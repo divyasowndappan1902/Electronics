@@ -13,7 +13,7 @@ async function processDirectory(directory) {
     
     if (stat.isDirectory() && file !== 'node_modules' && file !== '.git') {
       await processDirectory(fullPath);
-    } else if (stat.isFile() && /\.(png|jpg|jpeg)$/i.test(file)) {
+    } else if (stat.isFile() && /\.(png|jpg|jpeg|svg|webp)$/i.test(file)) {
       await convertToWebp(fullPath);
     }
   }
@@ -24,47 +24,64 @@ async function convertToWebp(filePath) {
   const ext = path.extname(filePath);
   const baseName = path.basename(filePath, ext);
   
+  const LIMIT = 70 * 1024; // 70 KB
+  
   // Special case if the file already has .webp in its name (like logo1.webp)
   let newFileName = baseName.endsWith('.webp') ? baseName : baseName + '.webp';
   const newFilePath = path.join(dir, newFileName);
-
-  let quality = 80;
-  let size = Infinity;
-  let resizeWidth = null;
+  const tempFilePath = newFilePath + '.tmp';
 
   try {
-    const metadata = await sharp(filePath).metadata();
-    resizeWidth = metadata.width;
+    const currentSize = fs.statSync(filePath).size;
+    if (ext.toLowerCase() === '.webp' && currentSize <= LIMIT) {
+      console.log(`Skipped ${filePath} - Already webp and under 70KB (${Math.round(currentSize/1024)}KB)`);
+      return;
+    }
 
-    while (size > 100 * 1024 && quality > 10) {
-      let sharpInstance = sharp(filePath);
+    const inputBuffer = fs.readFileSync(filePath);
+    const metadata = await sharp(inputBuffer).metadata();
+    let resizeWidth = metadata.width;
+    let quality = 80;
+    let size = Infinity;
+
+    while (size > LIMIT && quality > 10) {
+      let sharpInstance = sharp(inputBuffer);
       
       if (resizeWidth && resizeWidth < metadata.width) {
         sharpInstance = sharpInstance.resize(Math.round(resizeWidth));
       }
 
-      await sharpInstance.webp({ quality }).toFile(newFilePath);
+      await sharpInstance.webp({ quality }).toFile(tempFilePath);
       
-      size = fs.statSync(newFilePath).size;
+      size = fs.statSync(tempFilePath).size;
       
-      if (size > 100 * 1024) {
+      if (size > LIMIT) {
         quality -= 10;
         if (quality <= 30) {
            resizeWidth *= 0.8; // scale down dimensions if quality drops too much
         }
       }
     }
-    console.log(`Converted ${filePath} to ${newFilePath} - Size: ${Math.round(size/1024)}KB`);
+
+    if (fs.existsSync(newFilePath) && newFilePath !== filePath) {
+      fs.unlinkSync(newFilePath);
+    }
+    fs.renameSync(tempFilePath, newFilePath);
     
-    // Now replace occurrences in source files
-    updateReferences(path.basename(filePath), newFileName);
+    console.log(`Processed ${filePath} -> ${newFilePath} - Size: ${Math.round(size/1024)}KB`);
     
-    // Delete the original
-    fs.unlinkSync(filePath);
-    console.log(`Deleted original: ${filePath}`);
+    // Now replace occurrences in source files if it was a new format conversion
+    if (filePath !== newFilePath) {
+      updateReferences(path.basename(filePath), newFileName);
+      fs.unlinkSync(filePath);
+      console.log(`Deleted original: ${filePath}`);
+    }
     
   } catch (err) {
     console.error(`Error processing ${filePath}:`, err);
+    if (fs.existsSync(tempFilePath)) {
+      try { fs.unlinkSync(tempFilePath); } catch (_) {}
+    }
   }
 }
 
