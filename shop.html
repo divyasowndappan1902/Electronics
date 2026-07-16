@@ -173,10 +173,10 @@
         <div class="footer-col">
           <h3>Categories</h3>
           <ul class="footer-links">
-            <li><a href="404.html">Laptops & PC</a></li>
-            <li><a href="404.html">Smartphones</a></li>
-            <li><a href="404.html">Audio & Sound</a></li>
-            <li><a href="404.html">Gaming Gear</a></li>
+            <li><a href="shop.html?category=laptops">Laptops & PC</a></li>
+            <li><a href="shop.html?category=phones">Smartphones</a></li>
+            <li><a href="shop.html?category=audio">Audio & Sound</a></li>
+            <li><a href="shop.html?category=gaming">Gaming Gear</a></li>
           </ul>
         </div>
 
@@ -390,6 +390,17 @@
               applyFilters();
           }
       };
+
+      // Handle category from query parameter on page load
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlCategory = urlParams.get('category');
+      if (urlCategory) {
+          const checkbox = document.querySelector(`input[type="checkbox"][value="${urlCategory}"]`);
+          if (checkbox) {
+              checkbox.checked = true;
+              filterState.categories.push(urlCategory);
+          }
+      }
 
       applyFilters();
   </script>
